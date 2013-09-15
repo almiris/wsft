@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<configuration>
+    <rules>
+        <rule name="index">
+            <regexp>/</regexp>
+            <regexp>/index.jsp</regexp>
+            <param name="tkfilter.app">app1:app2</param>
+            <param name="tkfilter.type">both</param>
+        </rule>
+        <rule name="index2">
+            <regexp>/index2.jsp</regexp>
+        </rule>
+	</rules>
+	<processors>
+		<processor name="logger" class="fr.almiris.open.wsft.processors.LoggerProcessor"/>
+		<processor name="timer" class="fr.almiris.open.wsft.processors.TimerProcessor"/>
+		<processor name="tokenfilter" class="fr.almiris.open.wsft.processors.TokenFilterProcessor">
+		    <param name="dummy">dummy</param>
+		</processor>
+	</processors>
+	<!-- default=accept|reject -->
+	<default>accept</default>
+</configuration>
